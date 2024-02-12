@@ -23,7 +23,7 @@ function populateHTML(innArray){
             innArray[i].fornavn+"<br>"+innArray[i].etternavn+"<br>"+
             innArray[i].telefonnr+"<br>"+innArray[i].epost+"<br>"+"</li>"
         html+="</ul>"
-        document.getElementById("bilett").innerHTML = html;
+        document.getElementById("billett").innerHTML = html;
         console.log(html)
     }
 
