@@ -1,6 +1,6 @@
 bilettArray= [];
 
-function leggTilArray(){
+function nyBilett(){
     let film = document.getElementById("film").value;
     let antall = document.getElementById("antall").value;
     let fornavn = document.getElementById("fornavn").value;
