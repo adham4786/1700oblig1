@@ -6,18 +6,29 @@
 </head>
 <body>
 <h1>
-    Bestilling av kinobiletter
+    Bestilling av kinobilletter
 </h1>
 Velg film her:
+<label for="film">Film</label>
 <select id="film" onchange="velgFilm();">
     <option>Dune: Part Two</option>
     <option>Spider-Man: Beyond the Spider-Verse</option>
     <option>Deadpool 3</option>
 </select>
 
-Antall <input type="number" id="antall">
-Fornavn <input id="fornavn">
+<label for="antall">Antall</label>
+Antall <input id="antall" type="number">
+<label for="fornavn">Fornavn</label>
+Fornavn <input id="fornavn" type="text">
+<label for="etternavn">Etternavn</label>
+<input id="etternavn" type="text">
+<label for="telefonnr">Telefonnr</label>
+Telefonnr <input id="telefonnr" type="number">
+<label for="epost">Epost</label>
+Epost <input id="epost">
 
+
+<button onclick="nyBillett()">Click here</button>
 
 
 <main>

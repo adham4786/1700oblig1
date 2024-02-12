@@ -1,16 +1,16 @@
-bilettArray= [];
+billettArray= [];
 
-function nyBilett(){
+function nyBillett(){
     let film = document.getElementById("film").value;
     let antall = document.getElementById("antall").value;
     let fornavn = document.getElementById("fornavn").value;
     let etternavn = document.getElementById("etternavn").value;
     let telefonnr = document.getElementById("telefonnr").value;
     let epost = document.getElementById("epost").value;
-    bilettArray.push({film:film,antall:antall,fornavn:fornavn,
+    billettArray.push({film:film,antall:antall,fornavn:fornavn,
         etternavn:etternavn,telefonnr:telefonnr,epost:epost})
-    console.log(bilettArray);
-    populateHTML(bilettArray);
+    console.log(billettArray);
+    populateHTML(billettArray);
 }
 
 function populateHTML(innArray){
