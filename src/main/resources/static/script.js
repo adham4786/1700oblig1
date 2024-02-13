@@ -35,3 +35,8 @@ function populateHTML(innArray){
     document.getElementById("billett").innerHTML = html;
     console.log(html)
 }
+
+function slettBilletter (){
+    billettArray.length = 0
+    document.getElementById("billett").innerHTML = "";
+}
