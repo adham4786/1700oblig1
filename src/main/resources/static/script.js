@@ -15,16 +15,15 @@ function nyBillett(){
 
 function populateHTML(innArray){
     console.log("So far so good")
-    let html = "<ul>";
+    let html = "<ol>";
     console.log(innArray)
     for(let i in innArray){
         console.log(innArray[i].fornavn)
         html += "<li>" + innArray[i].film+"<br>"+innArray[i].antall+"<br>"+
             innArray[i].fornavn+"<br>"+innArray[i].etternavn+"<br>"+
             innArray[i].telefonnr+"<br>"+innArray[i].epost+"<br>"+"</li>"
-        html+="</ul>"
-        document.getElementById("billett").innerHTML = html;
-        console.log(html)
     }
-
+    html+="</ol>"
+    document.getElementById("billett").innerHTML = html;
+    console.log(html)
 }
