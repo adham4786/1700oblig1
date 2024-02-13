@@ -11,6 +11,14 @@ function nyBillett(){
         etternavn:etternavn,telefonnr:telefonnr,epost:epost})
     console.log(billettArray);
     populateHTML(billettArray);
+
+    document.getElementById("film").value = "";
+    document.getElementById("antall").value = "";
+    document.getElementById("fornavn").value = "";
+    document.getElementById("etternavn").value = "";
+    document.getElementById("telefonnr").value = "";
+    document.getElementById("epost").value = "";
+
 }
 
 function populateHTML(innArray){
