@@ -5,4 +5,4 @@ Didn't realize until I was going through the project on github before submitting
 because it is in the "main" folder locally on my PC.
 I fixed this to get it correctly in the file structure for the oblig
 by renaming the master branch here on github to main.
-Hope this is an acceptable fix :)
+Hopefully this is an acceptable fix :)
