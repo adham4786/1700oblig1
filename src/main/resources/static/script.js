@@ -31,6 +31,7 @@ function nyBillett(){
         fornavnFeilmelding.textContent = ""
         fornavnFeilmelding.style.display = "none";
     }
+
     const etternavnFeilmelding = document.getElementById("etternavnFeilmelding");
     const etternavnRegexp = /^[a-åA-Å\s\-]+$/;
     let validertEtternavn = etternavnRegexp.test(etternavn);
@@ -42,9 +43,19 @@ function nyBillett(){
         etternavnFeilmelding.style.display = "none";
     }
 
+    const epostFeilmelding = document.getElementById("epostFeilmelding");
+    const epostRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let validertEpost = epostRegexp.test(epost);
+    if (!validertEpost) {
+        epostFeilmelding.textContent = "Skriv inn en gyldig E-post";
+        epostFeilmelding.style.display = "block";
+    } else {
+        epostFeilmelding.textContent = ""
+        epostFeilmelding.style.display = "none";
+    }
 
 
-    if (film !== "" && validertFornavn && validertEtternavn) {
+    if (film !== "" && validertFornavn && validertEtternavn && validertEpost) {
         billettArray.push({
             film:film, antall:antall, fornavn:fornavn,
             etternavn:etternavn, telefonnr:telefonnr, epost:epost
