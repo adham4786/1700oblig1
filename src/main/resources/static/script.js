@@ -12,6 +12,8 @@ function nyBillett(){
         alert("Fyll ut alle felt!");
         return;
     } */
+
+
     const filmFeilmelding = document.getElementById("filmFeilmelding");
     if (film === ""){
         filmFeilmelding.textContent = "Vennligst velg en film"
@@ -43,6 +45,17 @@ function nyBillett(){
         etternavnFeilmelding.style.display = "none";
     }
 
+    const telefonnrFeilmelding = document.getElementById("telefonnrFeilmelding");
+    const telefonnrRegexp = /^\d{8}$/;
+    let validertTelefonnr = telefonnrRegexp.test(telefonnr);
+    if (!validertTelefonnr) {
+        telefonnrFeilmelding.textContent = "Skriv inn et gyldig telefonnr (8 siffer)";
+        telefonnrFeilmelding.style.display = "block";
+    } else {
+        telefonnrFeilmelding.textContent = ""
+        telefonnrFeilmelding.style.display = "none";
+    }
+
     const epostFeilmelding = document.getElementById("epostFeilmelding");
     const epostRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let validertEpost = epostRegexp.test(epost);
@@ -55,7 +68,8 @@ function nyBillett(){
     }
 
 
-    if (film !== "" && validertFornavn && validertEtternavn && validertEpost) {
+    if (film !== "" && validertFornavn && validertEtternavn && validertEpost
+        && validertTelefonnr) {
         billettArray.push({
             film:film, antall:antall, fornavn:fornavn,
             etternavn:etternavn, telefonnr:telefonnr, epost:epost
