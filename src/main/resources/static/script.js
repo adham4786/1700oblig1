@@ -42,6 +42,8 @@ function nyBillett(){
         etternavnFeilmelding.style.display = "none";
     }
 
+
+
     if (film !== "" && validertFornavn && validertEtternavn) {
         billettArray.push({
             film:film, antall:antall, fornavn:fornavn,
