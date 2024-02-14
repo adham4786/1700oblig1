@@ -12,14 +12,7 @@ function nyBillett(){
         alert("Fyll ut alle felt!");
         return;
     } */
-    const navnFeilmelding = document.getElementById("navnFeilmelding");
-    const navnRegexp = /^[a-åA-Å\s\-]+$/;
-    if (navnRegexp.test(fornavn)) {
-        navnFeilmelding.textContent = "";
-    }
-    else {
-        navnFeilmelding.textContent = "Skriv inn et navn."
-    }
+
 
     billettArray.push({film:film,antall:antall,fornavn:fornavn,
         etternavn:etternavn,telefonnr:telefonnr,epost:epost})
@@ -73,4 +66,18 @@ for html:
 <p id="navnFeilmelding"></p>
 
     oninput="sjekkNavn()"
+
+
+    hvis ikke jeg bare skal bruke html så funker det å bygge på denne koden:
+        const navnFeilmelding = document.getElementById("navnFeilmelding");
+    const navnRegexp = /^[a-åA-Å\s\-]+$/;
+    if (!navnRegexp.test(fornavn)) {
+        navnFeilmelding.textContent = "Skriv inn et navn.";
+    }
+    else {
+        navnFeilmelding.textContent = ""
+
+        men her må billettArray.push og sletting av input felt inn
+    }
+
 } */
