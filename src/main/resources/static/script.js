@@ -12,7 +12,26 @@ function nyBillett(){
         alert("Fyll ut alle felt!");
         return;
     } */
-
+    const fornavnFeilmelding = document.getElementById("fornavnFeilmelding");
+    const fornavnRegexp = /^[a-åA-Å\s\-]+$/;
+    if (!fornavnRegexp.test(fornavn)) {
+        fornavnFeilmelding.textContent = "Fornavn kan kun inneholde 'a-å', '-' eller ' '.";
+        fornavnFeilmelding.style.display = "block";
+    return;
+    } else {
+        fornavnFeilmelding.textContent = ""
+        fornavnFeilmelding.style.display = "none";
+    }
+    const etternavnFeilmelding = document.getElementById("etternavnFeilmelding");
+    const etternavnRegexp = /^[a-åA-Å\s\-]+$/;
+    if (!etternavnRegexp.test(etternavn)) {
+        etternavnFeilmelding.textContent = "Etternavn kan kun inneholde 'a-å', '-' eller ' '.";
+        etternavnFeilmelding.style.display = "block";
+        return;
+    } else {
+        etternavnFeilmelding.textContent = ""
+        etternavnFeilmelding.style.display = "none";
+    }
 
     billettArray.push({film:film,antall:antall,fornavn:fornavn,
         etternavn:etternavn,telefonnr:telefonnr,epost:epost})
@@ -61,7 +80,7 @@ function sjekkNavn(){
         feilmelding.textContent = "Skriv inn et navn."
     }
 
-
+}
 for html:
 <p id="navnFeilmelding"></p>
 
@@ -69,6 +88,9 @@ for html:
 
 
     hvis ikke jeg bare skal bruke html så funker det å bygge på denne koden:
+    html:
+    <p id="navnFeilmelding"></p>
+    js:
         const navnFeilmelding = document.getElementById("navnFeilmelding");
     const navnRegexp = /^[a-åA-Å\s\-]+$/;
     if (!navnRegexp.test(fornavn)) {
@@ -79,5 +101,4 @@ for html:
 
         men her må billettArray.push og sletting av input felt inn
     }
-
-} */
+ */
