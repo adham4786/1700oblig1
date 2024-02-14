@@ -12,39 +12,51 @@ function nyBillett(){
         alert("Fyll ut alle felt!");
         return;
     } */
+    const filmFeilmelding = document.getElementById("filmFeilmelding");
+    if (film === ""){
+        filmFeilmelding.textContent = "Vennligst velg en film"
+        filmFeilmelding.style.display = "block";
+    } else {
+        filmFeilmelding.textContent = ""
+        filmFeilmelding.style.display = "none";
+    }
+
     const fornavnFeilmelding = document.getElementById("fornavnFeilmelding");
     const fornavnRegexp = /^[a-åA-Å\s\-]+$/;
-    if (!fornavnRegexp.test(fornavn)) {
-        fornavnFeilmelding.textContent = "Fornavn kan kun inneholde 'a-å', '-' eller ' '.";
+    let validertFornavn = fornavnRegexp.test(fornavn);
+    if (!validertFornavn) {
+        fornavnFeilmelding.textContent = "Fornavn kan kun inneholde 'A-Å, 'a-å', '-' eller ' '.";
         fornavnFeilmelding.style.display = "block";
-    return;
     } else {
         fornavnFeilmelding.textContent = ""
         fornavnFeilmelding.style.display = "none";
     }
     const etternavnFeilmelding = document.getElementById("etternavnFeilmelding");
     const etternavnRegexp = /^[a-åA-Å\s\-]+$/;
-    if (!etternavnRegexp.test(etternavn)) {
-        etternavnFeilmelding.textContent = "Etternavn kan kun inneholde 'a-å', '-' eller ' '.";
+    let validertEtternavn = etternavnRegexp.test(etternavn);
+    if (!validertEtternavn) {
+        etternavnFeilmelding.textContent = "Etternavn kan kun inneholde 'A-Å, 'a-å', '-' eller ' '.";
         etternavnFeilmelding.style.display = "block";
-        return;
     } else {
         etternavnFeilmelding.textContent = ""
         etternavnFeilmelding.style.display = "none";
     }
 
-    billettArray.push({film:film,antall:antall,fornavn:fornavn,
-        etternavn:etternavn,telefonnr:telefonnr,epost:epost})
-    console.log(billettArray);
-    populateHTML(billettArray);
+    if (film !== "" && validertFornavn && validertEtternavn) {
+        billettArray.push({
+            film:film, antall:antall, fornavn:fornavn,
+            etternavn:etternavn, telefonnr:telefonnr, epost:epost
+        })
+        console.log(billettArray);
+        populateHTML(billettArray);
 
-    document.getElementById("film").value = "";
-    document.getElementById("antall").value = "";
-    document.getElementById("fornavn").value = "";
-    document.getElementById("etternavn").value = "";
-    document.getElementById("telefonnr").value = "";
-    document.getElementById("epost").value = "";
-
+        document.getElementById("film").value = "";
+        document.getElementById("antall").value = "";
+        document.getElementById("fornavn").value = "";
+        document.getElementById("etternavn").value = "";
+        document.getElementById("telefonnr").value = "";
+        document.getElementById("epost").value = "";
+    }
 }
 
 function populateHTML(innArray){
