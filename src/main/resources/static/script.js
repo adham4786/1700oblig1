@@ -7,9 +7,18 @@ function nyBillett(){
     let telefonnr = document.getElementById("telefonnr").value;
     let epost = document.getElementById("epost").value;
 
-    if (film === '' || antall === '' || fornavn === '' || etternavn === '' || telefonnr === '' || epost === '') {
+/*    if (film === '' || antall === '' || fornavn === ''
+        || etternavn === '' || telefonnr === '' || epost === '') {
         alert("Fyll ut alle felt!");
         return;
+    } */
+    const navnFeilmelding = document.getElementById("navnFeilmelding");
+    const navnRegexp = /^[a-åA-Å\s\-]+$/;
+    if (navnRegexp.test(fornavn)) {
+        navnFeilmelding.textContent = "";
+    }
+    else {
+        navnFeilmelding.textContent = "Skriv inn et navn."
     }
 
     billettArray.push({film:film,antall:antall,fornavn:fornavn,
@@ -45,3 +54,23 @@ function slettBilletter (){
     billettArray.length = 0
     document.getElementById("billett").innerHTML = "";
 }
+
+/*
+function sjekkNavn(){
+    const navn = document.getElementById("fornavn");
+    const feilmelding = document.getElementById("navnFeilmelding");
+
+    const navnRegexp = /^[a-åA-Å\s\-]+$/;
+    if (navnRegexp.test(fornavn)) {
+        feilmelding.textContent = "";
+    }
+    else {
+        feilmelding.textContent = "Skriv inn et navn."
+    }
+
+
+for html:
+<p id="navnFeilmelding"></p>
+
+    oninput="sjekkNavn()"
+} */
