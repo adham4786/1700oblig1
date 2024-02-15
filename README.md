@@ -1,9 +1,6 @@
 # 1700oblig1
-I messed up when initializing the github repo. 
-Somehow I started committing to "master" branch instead of "main" branch as intended.
-Didn't realize until I was going through the project on github before submitting,
-because it is in the "main" folder locally on my PC.
-I fixed this to get it correctly in the file structure for the oblig
-by renaming the master branch here on github to main.
-I was also afraid of deleting the PREVIOUSmain branch in case it would mess with anything in IntelliJ or here on github.
-Hopefully this is an acceptable fix :)
+Please ignore the "PREVIOUSmain" branch.
+I must have made an error when initializing the GitHub repo.
+Everything should be fine now, and everything is in the "main" branch.
+Other than that I haven't published this to GitHub pages since the oblig says just link GitHub repo.
+Hopefully, everything works fine :) 
