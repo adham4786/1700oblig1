@@ -114,39 +114,3 @@ function slettBilletter (){
     billettArray.length = 0
     document.getElementById("billett").innerHTML = "";
 }
-
-/*
-function sjekkNavn(){
-    const navn = document.getElementById("fornavn");
-    const feilmelding = document.getElementById("navnFeilmelding");
-
-    const navnRegexp = /^[a-åA-Å\s\-]+$/;
-    if (navnRegexp.test(fornavn)) {
-        feilmelding.textContent = "";
-    }
-    else {
-        feilmelding.textContent = "Skriv inn et navn."
-    }
-
-}
-for html:
-<p id="navnFeilmelding"></p>
-
-    oninput="sjekkNavn()"
-
-
-    hvis ikke jeg bare skal bruke html så funker det å bygge på denne koden:
-    html:
-    <p id="navnFeilmelding"></p>
-    js:
-        const navnFeilmelding = document.getElementById("navnFeilmelding");
-    const navnRegexp = /^[a-åA-Å\s\-]+$/;
-    if (!navnRegexp.test(fornavn)) {
-        navnFeilmelding.textContent = "Skriv inn et navn.";
-    }
-    else {
-        navnFeilmelding.textContent = ""
-
-        men her må billettArray.push og sletting av input felt inn
-    }
- */
