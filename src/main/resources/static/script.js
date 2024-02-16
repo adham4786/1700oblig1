@@ -1,3 +1,4 @@
+//initializes a ticket array
 billettArray= [];
 //main function for creating a ticket
 function nyBillett(){
@@ -15,6 +16,7 @@ function nyBillett(){
         return;
     }
     //if no fields are empty these validations will be checked
+    //max amount of tickets is 999
     const antallFeilmelding = document.getElementById("antallFeilmelding");
     const antallRegexp = /^\d{1,3}$/;
     let validertAntall = antallRegexp.test(antall);
@@ -26,6 +28,7 @@ function nyBillett(){
         antallFeilmelding.style.display = "none";
     }
 
+    //checks if film is selected
     const filmFeilmelding = document.getElementById("filmFeilmelding");
     if (film === ""){
         filmFeilmelding.textContent = "Vennligst velg en film"
@@ -34,7 +37,7 @@ function nyBillett(){
         filmFeilmelding.textContent = ""
         filmFeilmelding.style.display = "none";
     }
-
+    //checks if name is only letters, spaces or dash
     const fornavnFeilmelding = document.getElementById("fornavnFeilmelding");
     const fornavnRegexp = /^[a-åA-Å\s\-]+$/;
     let validertFornavn = fornavnRegexp.test(fornavn);
@@ -45,7 +48,7 @@ function nyBillett(){
         fornavnFeilmelding.textContent = ""
         fornavnFeilmelding.style.display = "none";
     }
-
+    //similar to fornavn
     const etternavnFeilmelding = document.getElementById("etternavnFeilmelding");
     const etternavnRegexp = /^[a-åA-Å\s\-]+$/;
     let validertEtternavn = etternavnRegexp.test(etternavn);
@@ -56,7 +59,7 @@ function nyBillett(){
         etternavnFeilmelding.textContent = ""
         etternavnFeilmelding.style.display = "none";
     }
-
+    //checks if there are 8 numbers
     const telefonnrFeilmelding = document.getElementById("telefonnrFeilmelding");
     const telefonnrRegexp = /^\d{8}$/;
     let validertTelefonnr = telefonnrRegexp.test(telefonnr);
@@ -67,7 +70,7 @@ function nyBillett(){
         telefonnrFeilmelding.textContent = ""
         telefonnrFeilmelding.style.display = "none";
     }
-
+    //checks if email follows email rules (ex. something@email.net)
     const epostFeilmelding = document.getElementById("epostFeilmelding");
     // Took epostRegexp code from https://emaillistvalidation.com/blog/email-validation-in-javascript-using-regular-expressions-the-ultimate-guide/
     const epostRegexp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -90,7 +93,7 @@ function nyBillett(){
         })
         console.log(billettArray);
         populateHTML(billettArray);
-
+        //Blanks out the input fields
         document.getElementById("film").value = "";
         document.getElementById("antall").value = "";
         document.getElementById("fornavn").value = "";
@@ -117,6 +120,7 @@ function populateHTML(innArray){
     console.log(html)
 }
 
+//empties the array and removes tickets from HTML
 function slettBilletter (){
     billettArray.length = 0
     document.getElementById("billett").innerHTML = "";
