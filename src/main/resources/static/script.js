@@ -16,9 +16,9 @@ function nyBillett(){
         return;
     }
     //if no fields are empty these validations will be checked
-    //max amount of tickets is 999
+    //max amount of tickets is 999 min is 1
     const antallFeilmelding = document.getElementById("antallFeilmelding");
-    const antallRegexp = /^\d{1,3}$/;
+    const antallRegexp = /^[1-9]\d{0,2}$/;
     let validertAntall = antallRegexp.test(antall);
     if (!validertAntall) {
         antallFeilmelding.textContent = "Skriv inn et gyldig antall (maks 3 siffer)";
