@@ -1,4 +1,5 @@
 billettArray= [];
+//main function for creating a ticket
 function nyBillett(){
     let film = document.getElementById("film").value;
     let antall = document.getElementById("antall").value;
@@ -7,11 +8,13 @@ function nyBillett(){
     let telefonnr = document.getElementById("telefonnr").value;
     let epost = document.getElementById("epost").value;
 
+    //alert that shows if any of the fields are empty
     if (film === '' || antall === '' || fornavn === ''
         || etternavn === '' || telefonnr === '' || epost === '') {
         alert("Fyll ut alle felt!");
         return;
     }
+    //if no fields are empty these validations will be checked
     const antallFeilmelding = document.getElementById("antallFeilmelding");
     const antallRegexp = /^\d{1,3}$/;
     let validertAntall = antallRegexp.test(antall);
@@ -66,7 +69,8 @@ function nyBillett(){
     }
 
     const epostFeilmelding = document.getElementById("epostFeilmelding");
-    const epostRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Took epostRegexp code from https://emaillistvalidation.com/blog/email-validation-in-javascript-using-regular-expressions-the-ultimate-guide/
+    const epostRegexp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let validertEpost = epostRegexp.test(epost);
     if (!validertEpost) {
         epostFeilmelding.textContent = "Skriv inn en gyldig E-post";
@@ -77,6 +81,7 @@ function nyBillett(){
     }
 
 
+    //this if sentence makes sure everything is correct before submitting to HTML
     if (film !== "" && validertAntall && validertFornavn && validertEtternavn
         && validertEpost && validertTelefonnr) {
         billettArray.push({
@@ -95,7 +100,9 @@ function nyBillett(){
     }
 }
 
+//shows tickets in the HTML, used in nyBillett() function
 function populateHTML(innArray){
+    //console log to see how far I got, decided to keep it
     console.log("So far so good")
     let html = "<ol>";
     console.log(innArray)
