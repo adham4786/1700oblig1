@@ -8,16 +8,19 @@
 <h1>
     Bestilling av kinobilletter
 </h1>
+    <!-- Dropdown menu for movies -->
 <label for="film">Velg film:</label>
 <select id="film" onchange="velgFilm();">
     <option>Dune: Part Two</option>
     <option>Spider-Man: Beyond the Spider-Verse</option>
-    <option>Deadpool 3</option>
+    <option>Deadpool & Wolverine</option>
 </select>
+<!-- All error messages styled differently and hidden by default -->
 <p style="display:none; color:red; font-weight: bold;" id="filmFeilmelding"></p>
 <br>
 <!-- Added labels for screen readers -->
 <label for="antall">Antall:</label>
+<!-- Input fields have either type text or number-->
 <input type="number" id="antall">
 <p style="display:none; color:red; font-weight: bold;" id="antallFeilmelding"></p>
 <br>
@@ -37,15 +40,17 @@
 <input type="text" id="epost">
 <p style="display:none; color:red; font-weight: bold;" id="epostFeilmelding"></p>
 <br>
-
+<!-- Button for buying ticket -->
 <button onclick="nyBillett()">Kjøp billett</button>
 <br>
 
 <h2>Alle billetter</h2>
 <br>
+<!-- Where tickets end up -->
 <p id="billett"></p>
 
 <br>
+<!-- Deletes all tickets -->
 <button onclick="slettBilletter()">Slett alle billetter</button>
     
 </body>
