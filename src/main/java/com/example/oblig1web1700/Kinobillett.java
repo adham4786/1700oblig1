@@ -9,7 +9,14 @@ public class Kinobillett {
     private String epost;
 
     // Konstruktør
-    public Kinobillett() {}
+    public Kinobillett(String film,int antall,String fornavn,String etternavn,String telefon,String epost) {
+        this.film = film;
+        this.antall = antall;
+        this.fornavn = fornavn;
+        this.etternavn = etternavn;
+        this.telefon = telefon;
+        this.epost = epost;
+    }
 
     // Getters og setters
     public String getFilm() {
