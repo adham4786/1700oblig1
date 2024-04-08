@@ -1,5 +1,4 @@
 package com.example.oblig1web1700;
-package com.example.data1700oblig1;
 
 public class Kinobillett {
     private String film;
