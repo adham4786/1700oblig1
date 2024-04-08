@@ -64,13 +64,13 @@ public class Kinobillett {
     @Override
     public String toString() {
         return "Kinobillett{" +
-                "film='" + film + ''' +
-        ", antall=" + antall +
-                ", fornavn='" + fornavn + ''' +
-        ", etternavn='" + etternavn + ''' +
-        ", telefon='" + telefon + ''' +
-        ", epost='" + epost + ''' +
-        '}';
+                "film='" + film + '\'' +
+                ", antall=" + antall +
+                ", fornavn='" + fornavn + '\'' +
+                ", etternavn='" + etternavn + '\'' +
+                ", telefon='" + telefon + '\'' +
+                ", epost='" + epost + '\'' +
+                '}';
     }
 }
 
