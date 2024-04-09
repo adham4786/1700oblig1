@@ -1,21 +1,43 @@
 package com.example.oblig1web1700;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootApplication
 @RestController
 
 public class KinobillettController {
-    private final List<Kinobillett> billettRegistering = new ArrayList<>();
+    @Autowired
+    KinobillettRepository rep;
+
+    @GetMapping("/lagre")
+    public void lagreBiilletter (Kinobillett innBillett){rep.lagreBillett(innBillett);}
+
+    @GetMapping("hent")
+    public void hentBiilletter(){rep.hentBilletter();}
+
+    @GetMapping("slett")
+    public void slettBiilletter(){rep.slettBilletter();}
 
     public static void main(String[] args) {
         SpringApplication.run(KinobillettController.class, args);
     }
+
+
+
+}
+
+
+
+    /*
+    import java.util.ArrayList;
+    import java.util.List;
+
+
+   public final List<Kinobillett> billettRegistering = new ArrayList<>();
 
     // Endepunkt for å registrere en ny kinobillettbestilling
     @PostMapping("/registrerBestillinger")
@@ -34,4 +56,6 @@ public class KinobillettController {
     public void slettAlleBestillinger() {
         billettRegistering.clear();
     }
-}
+
+
+     */
