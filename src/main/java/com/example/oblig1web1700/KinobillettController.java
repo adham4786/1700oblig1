@@ -13,7 +13,7 @@ public class KinobillettController {
     @Autowired
     KinobillettRepository rep;
 
-    @GetMapping("/lagre")
+    @GetMapping("lagre")
     public void lagreBiilletter (Kinobillett innBillett){rep.lagreBillett(innBillett);}
 
     @GetMapping("hent")
