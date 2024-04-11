@@ -18,6 +18,10 @@ public class Kinobillett {
         this.epost = epost;
     }
 
+    public Kinobillett(){
+
+    }
+
     // Getters og setters
     public String getFilm() {
         return film;
