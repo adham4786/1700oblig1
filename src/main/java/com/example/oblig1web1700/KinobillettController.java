@@ -14,13 +14,13 @@ public class KinobillettController {
     KinobillettRepository rep;
 
     @GetMapping("/lagre")
-    public void lagreBiilletter (Kinobillett innBillett){rep.lagreBillett(innBillett);}
+    public void lagreBillett (Kinobillett innBillett){rep.lagreBillett(innBillett);}
 
     @GetMapping("/hent")
-    public void hentBiilletter(){rep.hentBilletter();}
+    public void hentBilletter(){rep.hentBilletter();}
 
     @GetMapping("/slett")
-    public void slettBiilletter(){rep.slettBilletter();}
+    public void slettBilletter(){rep.slettBilletter();}
 
     public static void main(String[] args) {
         SpringApplication.run(KinobillettController.class, args);
