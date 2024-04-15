@@ -56,7 +56,7 @@ function nyBillett(){
 
     const telefonFeilmelding = document.getElementById("telefonFeilmelding");
     const telefonRegexp = /^\d{8}$/;
-    let validertTelefon = telefonRegexp.test(telefonnr);
+    let validertTelefon = telefonRegexp.test(telefon);
     if (!validertTelefon) {
         telefonFeilmelding.textContent = "Skriv inn et gyldig telefonnr (8 siffer)";
         telefonFeilmelding.style.display = "block";
