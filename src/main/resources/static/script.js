@@ -115,6 +115,20 @@ function slettBilletter (){
     document.getElementById("billett").innerHTML = "";
 }
 
+function lagreBillettFraInput(){
+    kinobillett = {
+        "film": document.getElementById("film").value;
+        "antall": document.getElementById("antall").value;
+        "fornavn": document.getElementById("fornavn").value;
+        "etternavn": document.getElementById("etternavn").value;
+        "telefonnr": document.getElementById("telefonnr").value;
+        "epost": document.getElementById("epost").value;
+    }
+    console.log(kinobillett)
+    $.post("http://localhost:8080/lagre",kinobillett,function (data) {
+    })
+}
+
 /*
 function sjekkNavn(){
     const navn = document.getElementById("fornavn");
