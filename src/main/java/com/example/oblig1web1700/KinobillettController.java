@@ -13,13 +13,13 @@ public class KinobillettController {
     @Autowired
     KinobillettRepository rep;
 
-    @GetMapping("/lagre")
+    @PostMapping("/lagre")
     public void lagreBillett (Kinobillett innBillett){rep.lagreBillett(innBillett);}
 
     @GetMapping("/hent")
     public void hentBilletter(){rep.hentBilletter();}
 
-    @GetMapping("/slett")
+    @DeleteMapping("/slett")
     public void slettBilletter(){rep.slettBilletter();}
 
     public static void main(String[] args) {
