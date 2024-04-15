@@ -125,8 +125,12 @@ function lagreBillettFraInput(){
         "epost": document.getElementById("epost").value
     }
     console.log(kinobillett)
-    $.post("http://localhost:8080/lagre",kinobillett,function (data) {
-    })
+    $.ajax({
+        url: "http://localhost:8080/lagre",
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(kinobillett),
+        })
     nyBillett();
 }
 
