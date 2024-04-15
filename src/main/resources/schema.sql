@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS 'Kinobillett' (
     antall INT NOT NULL,
     fornavn VARCHAR(255) NOT NULL,
     etternavn VARCHAR(255) NOT NULL,
-    telefon BIGINT NOT NULL,
+    telefon VARCHAR(8) NOT NULL,
     epost VARCHAR(255) NOT NULL
 );
 
