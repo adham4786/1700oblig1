@@ -16,7 +16,8 @@ public class KinobillettController {
   //
  //   @RequestMapping(value = "/lagre", method = RequestMethod.POST)
 //    @RequestMapping(value = "/lagre", method = {RequestMethod.POST, RequestMethod.GET})
-    @PostMapping("/lagre")
+//    @PostMapping("/lagre")
+    @RequestMapping(value = "/lagre", method = RequestMethod.POST)
     public void lagreBillett (@RequestBody Kinobillett innBillett){rep.lagreBillett(innBillett);}
     @GetMapping("/hent")
     public void hentBilletter(){rep.hentBilletter();}
