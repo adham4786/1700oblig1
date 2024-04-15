@@ -7,15 +7,17 @@ public class Kinobillett {
     private String etternavn;
     private String telefon;
     private String epost;
+    private Long id;
 
     // Konstruktør
-    public Kinobillett(String film,int antall,String fornavn,String etternavn,String telefon,String epost) {
+    public Kinobillett(Long id, String film,int antall,String fornavn,String etternavn,String telefon,String epost) {
         this.film = film;
         this.antall = antall;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.telefon = telefon;
         this.epost = epost;
+        this.id = id;
     }
 
     public Kinobillett(){
@@ -70,8 +72,15 @@ public class Kinobillett {
     public void setEpost(String epost) {
         this.epost = epost;
     }
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
     // toString-metode for enkel utskrift
+
     @Override
     public String toString() {
         return "Kinobillett{" +
@@ -81,6 +90,7 @@ public class Kinobillett {
                 ", etternavn='" + etternavn + '\'' +
                 ", telefon='" + telefon + '\'' +
                 ", epost='" + epost + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 }
