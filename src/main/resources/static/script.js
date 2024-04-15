@@ -127,6 +127,7 @@ function lagreBillettFraInput(){
     console.log(kinobillett)
     $.post("http://localhost:8080/lagre",kinobillett,function (data) {
     })
+    nyBillett();
 }
 
 /*

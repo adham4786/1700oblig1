@@ -18,28 +18,33 @@
 <p style="display:none; color:red; font-weight: bold;" id="filmFeilmelding"></p>
 <br>
 <!-- Added labels for screen readers -->
-<label for="antall">Antall:</label>
-<input type="number" id="antall">
-<p style="display:none; color:red; font-weight: bold;" id="antallFeilmelding"></p>
-<br>
-<label for="fornavn">Fornavn:</label>
-<input type="text" id="fornavn">
-<p style="display:none; color:red; font-weight: bold;" id="fornavnFeilmelding"></p>
-<br>
-<label for="etternavn">Etternavn:</label>
-<input type="text" id="etternavn">
-<p style="display:none; color:red; font-weight: bold;" id="etternavnFeilmelding"></p>
-<br>
-<label for="telefonnr">Telefonnr:</label>
-<input type="number" id="telefonnr">
-<p style="display:none; color:red; font-weight: bold;" id="telefonnrFeilmelding"></p>
-<br>
-<label for="epost">Epost:</label>
-<input type="text" id="epost">
-<p style="display:none; color:red; font-weight: bold;" id="epostFeilmelding"></p>
-<br>
+<form id ="billettSkjema">
+    <label for="antall">Antall:</label>
+    <input type="number" id="antall">
+    <p style="display:none; color:red; font-weight: bold;" id="antallFeilmelding"></p>
+    <br>
+    <label for="fornavn">Fornavn:</label>
+    <input type="text" id="fornavn">
+    <p style="display:none; color:red; font-weight: bold;" id="fornavnFeilmelding"></p>
+    <br>
+    <label for="etternavn">Etternavn:</label>
+    <input type="text" id="etternavn">
+    <p style="display:none; color:red; font-weight: bold;" id="etternavnFeilmelding"></p>
+    <br>
+    <label for="telefonnr">Telefonnr:</label>
+    <input type="number" id="telefonnr">
+    <p style="display:none; color:red; font-weight: bold;" id="telefonnrFeilmelding"></p>
+    <br>
+    <label for="epost">Epost:</label>
+    <input type="text" id="epost">
+    <p style="display:none; color:red; font-weight: bold;" id="epostFeilmelding"></p>
+    <button type="button" onclick="lagreBillettFraInput()">Lagre billett</button>
+</form>
 
+<br>
+<!--
 <button onclick="nyBillett()">Kjøp billett</button>
+-->
 <br>
 
 <h2>Alle billetter</h2>
