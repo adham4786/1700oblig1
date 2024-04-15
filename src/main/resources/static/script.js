@@ -4,11 +4,11 @@ function nyBillett(){
     let antall = document.getElementById("antall").value;
     let fornavn = document.getElementById("fornavn").value;
     let etternavn = document.getElementById("etternavn").value;
-    let telefonnr = document.getElementById("telefonnr").value;
+    let telefon = document.getElementById("telefon").value;
     let epost = document.getElementById("epost").value;
 
     if (film === '' || antall === '' || fornavn === ''
-        || etternavn === '' || telefonnr === '' || epost === '') {
+        || etternavn === '' || telefon === '' || epost === '') {
         alert("Fyll ut alle felt!");
         return;
     }
@@ -54,15 +54,15 @@ function nyBillett(){
         etternavnFeilmelding.style.display = "none";
     }
 
-    const telefonnrFeilmelding = document.getElementById("telefonnrFeilmelding");
-    const telefonnrRegexp = /^\d{8}$/;
-    let validertTelefonnr = telefonnrRegexp.test(telefonnr);
-    if (!validertTelefonnr) {
-        telefonnrFeilmelding.textContent = "Skriv inn et gyldig telefonnr (8 siffer)";
-        telefonnrFeilmelding.style.display = "block";
+    const telefonFeilmelding = document.getElementById("telefonFeilmelding");
+    const telefonRegexp = /^\d{8}$/;
+    let validertTelefon = telefonRegexp.test(telefonnr);
+    if (!validertTelefon) {
+        telefonFeilmelding.textContent = "Skriv inn et gyldig telefonnr (8 siffer)";
+        telefonFeilmelding.style.display = "block";
     } else {
-        telefonnrFeilmelding.textContent = ""
-        telefonnrFeilmelding.style.display = "none";
+        telefonFeilmelding.textContent = ""
+        telefonFeilmelding.style.display = "none";
     }
 
     const epostFeilmelding = document.getElementById("epostFeilmelding");
@@ -78,10 +78,10 @@ function nyBillett(){
 
 
     if (film !== "" && validertAntall && validertFornavn && validertEtternavn
-        && validertEpost && validertTelefonnr) {
+        && validertEpost && validertTelefon) {
         billettArray.push({
             film:film, antall:antall, fornavn:fornavn,
-            etternavn:etternavn, telefonnr:telefonnr, epost:epost
+            etternavn:etternavn, telefon:telefon, epost:epost
         })
         console.log(billettArray);
         populateHTML(billettArray);
@@ -90,7 +90,7 @@ function nyBillett(){
         document.getElementById("antall").value = "";
         document.getElementById("fornavn").value = "";
         document.getElementById("etternavn").value = "";
-        document.getElementById("telefonnr").value = "";
+        document.getElementById("telefon").value = "";
         document.getElementById("epost").value = "";
     }
 }
@@ -103,7 +103,7 @@ function populateHTML(innArray){
         console.log(innArray[i].fornavn)
         html += "<li>" + innArray[i].film+"<br>"+innArray[i].antall+"<br>"+
             innArray[i].fornavn+"<br>"+innArray[i].etternavn+"<br>"+
-            innArray[i].telefonnr+"<br>"+innArray[i].epost+"<br>"+"</li>"
+            innArray[i].telefon+"<br>"+innArray[i].epost+"<br>"+"</li>"
     }
     html+="</ol>"
     document.getElementById("billett").innerHTML = html;
@@ -121,7 +121,7 @@ function lagreBillettFraInput(){
         "antall": document.getElementById("antall").value,
         "fornavn": document.getElementById("fornavn").value,
         "etternavn": document.getElementById("etternavn").value,
-        "telefonnr": document.getElementById("telefonnr").value,
+        "telefon": document.getElementById("telefon").value,
         "epost": document.getElementById("epost").value
     }
     console.log(kinobillett)
