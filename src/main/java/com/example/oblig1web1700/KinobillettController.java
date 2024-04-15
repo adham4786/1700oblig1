@@ -13,9 +13,11 @@ public class KinobillettController {
     @Autowired
     KinobillettRepository rep;
 
+  //
+ //   @RequestMapping(value = "/lagre", method = RequestMethod.POST)
+//    @RequestMapping(value = "/lagre", method = {RequestMethod.POST, RequestMethod.GET})
     @PostMapping("/lagre")
-    public void lagreBillett (Kinobillett innBillett){rep.lagreBillett(innBillett);}
-
+    public void lagreBillett (@RequestBody Kinobillett innBillett){rep.lagreBillett(innBillett);}
     @GetMapping("/hent")
     public void hentBilletter(){rep.hentBilletter();}
 
