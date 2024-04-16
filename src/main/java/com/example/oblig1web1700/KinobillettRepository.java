@@ -46,5 +46,4 @@ public class KinobillettRepository {
         String sql = "DELETE * FROM Kinobillett";
         db.update(sql);
     }
-
 }
