@@ -125,8 +125,8 @@ function lagreBillettFraInput(){
         "epost": document.getElementById("epost").value
     }
     console.log(kinobillett)
+    // I was getting error messages when using $.post, so I've used $.ajax instead
     /* $.post("http://localhost:8080/lagre",kinobillett, function (data){}) */
-
     $.ajax({
         url: "http://localhost:8080/lagre",
         type: "POST",
@@ -135,6 +135,22 @@ function lagreBillettFraInput(){
         })
     nyBillett();
 }
+
+function hentAlleBilletterFraDB (){
+    $.get("http://localhost:8080/hent", function (data) {
+        console.log(data);
+        let dynamicHTML = "<ul>";
+        data.forEach(function (kinobillett) {
+            dynamicHTML += "<li>" + kinobillett.film +" "+ kinobillett.antall+" "
+            + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
+            + kinobillett.telefon +" "+ kinobillett.epost + "</li>"
+        //        "<button onclick='oppdaterBillett)'>"
+        })
+        dynamicHTML += "</ul>"
+     //   document.getElementById("billett?").innerHTML = dynamicHTML;
+    })
+}
+
 
 /*
 function sjekkNavn(){
