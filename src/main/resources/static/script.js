@@ -151,6 +151,13 @@ function hentAlleBilletterFraDB (){
     })
 }
 
+function slettBillett(id){
+    $.ajax({
+        url: 'http://localhost:8080/deleteStudent?id='+id,
+        type: 'DELETE',
+    })
+}
+
 
 /*
 function sjekkNavn(){
