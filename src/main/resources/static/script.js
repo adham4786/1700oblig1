@@ -141,14 +141,14 @@ function hentAlleBilletterFraDB (){
         console.log(data);
         let dynamicHTML = "<ul>";
         data.forEach(function (kinobillett) {
-            dynamicHTML += "<li>" + kinobillett.film +" "+ kinobillett.antall+" "
+            dynamicHTML += "<button>" + kinobillett.film +" "+ kinobillett.antall+" "
             + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
             + kinobillett.telefon +" "+ kinobillett.epost +
-           //     "<button onclick='oppdaterBillett()'>"
-                "</li>"
+                "<button onclick='oppdaterBillett(" + kinobillett.id +")'>Endre</button>"
+                "<button onclick='slettBillett(" + kinobillett.id +")'>Slett</button>"+ "</li>"
         })
         dynamicHTML += "</ul>"
-     //   document.getElementById("billetter").innerHTML = dynamicHTML;
+        document.getElementById("billetter").innerHTML = dynamicHTML;
     })
 }
 
@@ -157,6 +157,19 @@ function slettBillett(id){
         url: 'http://localhost:8080/deleteStudent?id='+id,
         type: 'DELETE',
     })
+}
+
+function oppdaterBillett(id){
+    document.getElementById("idBillett").innerHTML = id;
+    $.get("http://localhost:8080/getStudentsFromDB?id"+id, function (data){
+        document.getElementById("filmEndring").value = data.film;
+        document.getElementById("antallEndring").value = data.antall;
+        document.getElementById("fornavnEndring").value = data.fornavn;
+        document.getElementById("etternavnEndring").value = data.etternavn;
+        document.getElementById("telefonEndring").value = data.telefon;
+        document.getElementById("epostEndring").value = data.epost;
+    })
+    console.log(id);
 }
 
 function oppdaterBillettIDB(){
