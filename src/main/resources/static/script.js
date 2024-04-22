@@ -1,4 +1,5 @@
 billettArray= [];
+let kinobillett = null;
 function nyBillett(){
     let film = document.getElementById("film").value;
     let antall = document.getElementById("antall").value;
@@ -144,7 +145,7 @@ function hentAlleBilletterFraDB (){
             dynamicHTML += "<button>" + kinobillett.film +" "+ kinobillett.antall+" "
             + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
             + kinobillett.telefon +" "+ kinobillett.epost +
-                "<button onclick='oppdaterBillett(" + kinobillett.id +")'>Endre</button>"
+                "<button onclick='oppdaterBillett(" + kinobillett.id +")'>Endre</button>"+
                 "<button onclick='slettBillett(" + kinobillett.id +")'>Slett</button>"+ "</li>"
         })
         dynamicHTML += "</ul>"
@@ -173,7 +174,7 @@ function oppdaterBillett(id){
 }
 
 function oppdaterBillettIDB(){
-    billett = {
+    kinobillett = {
         "id": document.getElementById("idBillett").innerHTML,
         "film": document.getElementById("filmEndring").value,
         "antall": document.getElementById("antallEndring").value,
@@ -183,8 +184,8 @@ function oppdaterBillettIDB(){
         "epost": document.getElementById("epostEndring").value,
     }
     console.log(document.getElementById("idBillett").value);
-    console.log(billett)
-    $.post("http://localhost:8080/oppdaterBillett", billett, function (data){})
+    console.log(kinobillett)
+    $.post("http://localhost:8080/oppdaterBillett", kinobillett, function (data){})
 }
 
 
