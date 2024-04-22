@@ -25,6 +25,13 @@ public class KinobillettController {
     @DeleteMapping("/slett")
     public void slettBilletter(){rep.slettBilletter();}
 
+    @PostMapping("/oppdaterBillett")
+    public String oppdaterBillett(Kinobillett billett){
+        rep.oppdaterBillett(billett);
+        return "updated";
+    }
+
+
     public static void main(String[] args) {
         SpringApplication.run(KinobillettController.class, args);
     }

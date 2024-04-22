@@ -143,11 +143,12 @@ function hentAlleBilletterFraDB (){
         data.forEach(function (kinobillett) {
             dynamicHTML += "<li>" + kinobillett.film +" "+ kinobillett.antall+" "
             + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
-            + kinobillett.telefon +" "+ kinobillett.epost + "</li>"
-        //        "<button onclick='oppdaterBillett)'>"
+            + kinobillett.telefon +" "+ kinobillett.epost +
+           //     "<button onclick='oppdaterBillett()'>"
+                "</li>"
         })
         dynamicHTML += "</ul>"
-     //   document.getElementById("billett?").innerHTML = dynamicHTML;
+     //   document.getElementById("billetter").innerHTML = dynamicHTML;
     })
 }
 
@@ -156,6 +157,21 @@ function slettBillett(id){
         url: 'http://localhost:8080/deleteStudent?id='+id,
         type: 'DELETE',
     })
+}
+
+function oppdaterBillettIDB(){
+    billett = {
+        "id": document.getElementById("idBillett").innerHTML,
+        "film": document.getElementById("filmEndring").value,
+        "antall": document.getElementById("antallEndring").value,
+        "fornavn": document.getElementById("fornavnEndring").value,
+        "etternavn": document.getElementById("etternavnEndring").value,
+        "telefon": document.getElementById("telefonEndring").value,
+        "epost": document.getElementById("epostEndring").value,
+    }
+    console.log(document.getElementById("idBillett").value);
+    console.log(billett)
+    $.post("http://localhost:8080/oppdaterBillett", billett, function (data){})
 }
 
 
