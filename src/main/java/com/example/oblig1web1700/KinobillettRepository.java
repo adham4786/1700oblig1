@@ -42,6 +42,10 @@ public class KinobillettRepository {
         return db.query(sql, new KinobillettRowMapper());
     }
 
+    public List<Kinobillett> finnAlle(){
+        return db.query("SELECT * FROM Kinobillett", new KinobillettRowMapper());
+    }
+
     public void slettBilletter(){
         String sql = "DELETE * FROM Kinobillett";
         db.update(sql);

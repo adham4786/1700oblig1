@@ -141,7 +141,9 @@ function hentAlleBilletterFraDB (){
     $.get("http://localhost:8080/hent", function (data) {
         console.log(data);
         let dynamicHTML = "<ul>";
-        data.forEach(function (kinobillett) {
+     //   for (let i = 0; i<data.length; i++)
+        data.forEach(function (kinobillett){
+     //       const kinobillett = data[i];
             dynamicHTML += "<button>" + kinobillett.film +" "+ kinobillett.antall+" "
             + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
             + kinobillett.telefon +" "+ kinobillett.epost +
@@ -152,6 +154,22 @@ function hentAlleBilletterFraDB (){
         document.getElementById("billetter").innerHTML = dynamicHTML;
     })
 }
+
+/*function hentAlleBilletterFraDB (){
+    $.get("http://localhost:8080/hent", function (data) {
+        console.log(data);
+        let dynamicHTML = "<ul>";
+        data.forEach(function (kinobillett) {
+            dynamicHTML += "<button>" + kinobillett.film +" "+ kinobillett.antall+" "
+            + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
+            + kinobillett.telefon +" "+ kinobillett.epost +
+                "<button onclick='oppdaterBillett(" + kinobillett.id +")'>Endre</button>"+
+                "<button onclick='slettBillett(" + kinobillett.id +")'>Slett</button>"+ "</li>"
+        })
+        dynamicHTML += "</ul>"
+        document.getElementById("billetter").innerHTML = dynamicHTML;
+    })
+} */
 
 function slettBillett(id){
     $.ajax({
