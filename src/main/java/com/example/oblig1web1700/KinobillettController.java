@@ -23,7 +23,8 @@ public class KinobillettController {
     public void lagreBillett (@RequestBody Kinobillett innBillett){rep.lagreBillett(innBillett);}
     @GetMapping("/hent")
     public List<Kinobillett> hentBilletter(){
-        return rep.finnAlle();
+        //kan enten bruke hentBilletter eller finnAlle
+        return rep.hentBilletter();
     }
 
     @DeleteMapping("/slett")

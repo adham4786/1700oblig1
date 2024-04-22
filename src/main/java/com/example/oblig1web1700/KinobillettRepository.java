@@ -41,7 +41,7 @@ public class KinobillettRepository {
         String sql = "SELECT * FROM Kinobillett ORDER BY etternavn";
         return db.query(sql, new KinobillettRowMapper());
     }
-
+// må velge en av disse 2
     public List<Kinobillett> finnAlle(){
         return db.query("SELECT * FROM Kinobillett", new KinobillettRowMapper());
     }
