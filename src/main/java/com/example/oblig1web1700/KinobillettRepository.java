@@ -1,7 +1,6 @@
 package com.example.oblig1web1700;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -40,10 +39,6 @@ public class KinobillettRepository {
     public List<Kinobillett> hentBilletter() {
         String sql = "SELECT * FROM Kinobillett ORDER BY etternavn";
         return db.query(sql, new KinobillettRowMapper());
-    }
-// må velge en av disse 2
-    public List<Kinobillett> finnAlle(){
-        return db.query("SELECT * FROM Kinobillett", new KinobillettRowMapper());
     }
 
     public void slettAlleBilletter(){

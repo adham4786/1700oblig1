@@ -141,9 +141,7 @@ function hentAlleBilletterFraDB (){
     $.get("http://localhost:8080/hent", function (data) {
         console.log(data);
         let dynamicHTML = "<ul>";
-     //   for (let i = 0; i<data.length; i++)
         data.forEach(function (kinobillett){
-     //       const kinobillett = data[i];
             dynamicHTML += "<li>" + kinobillett.film +" "+ kinobillett.antall+" "
             + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
             + kinobillett.telefon +" "+ kinobillett.epost +
@@ -155,21 +153,6 @@ function hentAlleBilletterFraDB (){
     })
 }
 
-/*function hentAlleBilletterFraDB (){
-    $.get("http://localhost:8080/hent", function (data) {
-        console.log(data);
-        let dynamicHTML = "<ul>";
-        data.forEach(function (kinobillett) {
-            dynamicHTML += "<button>" + kinobillett.film +" "+ kinobillett.antall+" "
-            + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
-            + kinobillett.telefon +" "+ kinobillett.epost +
-                "<button onclick='oppdaterBillett(" + kinobillett.id +")'>Endre</button>"+
-                "<button onclick='slettBillett(" + kinobillett.id +")'>Slett</button>"+ "</li>"
-        })
-        dynamicHTML += "</ul>"
-        document.getElementById("billetter").innerHTML = dynamicHTML;
-    })
-} */
 
 function slettBillett(id){
     $.ajax({
@@ -217,40 +200,3 @@ function oppdaterBillettIDB(){
         }
     }) */
 }
-
-
-/*
-function sjekkNavn(){
-    const navn = document.getElementById("fornavn");
-    const feilmelding = document.getElementById("navnFeilmelding");
-
-    const navnRegexp = /^[a-åA-Å\s\-]+$/;
-    if (navnRegexp.test(fornavn)) {
-        feilmelding.textContent = "";
-    }
-    else {
-        feilmelding.textContent = "Skriv inn et navn."
-    }
-
-}
-for html:
-<p id="navnFeilmelding"></p>
-
-    oninput="sjekkNavn()"
-
-
-    hvis ikke jeg bare skal bruke html så funker det å bygge på denne koden:
-    html:
-    <p id="navnFeilmelding"></p>
-    js:
-        const navnFeilmelding = document.getElementById("navnFeilmelding");
-    const navnRegexp = /^[a-åA-Å\s\-]+$/;
-    if (!navnRegexp.test(fornavn)) {
-        navnFeilmelding.textContent = "Skriv inn et navn.";
-    }
-    else {
-        navnFeilmelding.textContent = ""
-
-        men her må billettArray.push og sletting av input felt inn
-    }
- */

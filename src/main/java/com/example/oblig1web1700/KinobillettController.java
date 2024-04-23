@@ -15,20 +15,20 @@ public class KinobillettController {
     @Autowired
     KinobillettRepository rep;
 
-  //
- //   @RequestMapping(value = "/lagre", method = RequestMethod.POST)
-//    @RequestMapping(value = "/lagre", method = {RequestMethod.POST, RequestMethod.GET})
-//    @PostMapping("/lagre")
     @RequestMapping(value = "/lagre", method = RequestMethod.POST)
-    public void lagreBillett (@RequestBody Kinobillett innBillett){rep.lagreBillett(innBillett);}
+    public void lagreBillett (@RequestBody Kinobillett innBillett){
+        rep.lagreBillett(innBillett);
+    }
+
     @GetMapping("/hent")
     public List<Kinobillett> hentBilletter(){
-        //kan enten bruke hentBilletter eller finnAlle
         return rep.hentBilletter();
     }
 
     @DeleteMapping("/slettAlle")
-    public void slettAlleBilletter(){rep.slettAlleBilletter();}
+    public void slettAlleBilletter(){
+        rep.slettAlleBilletter();
+    }
 
     @DeleteMapping("/slettBillett")
     public String slettBillett(@RequestParam Long id){
@@ -36,21 +36,13 @@ public class KinobillettController {
         return "slettet";
     }
 
-
     @PostMapping("/oppdaterBillett")
     public String oppdaterBillettIDBPost(Kinobillett billett){
         rep.oppdaterBillett(billett);
         return "oppdatert";
     }
-/*
-    @RequestMapping(value = "/oppdaterBillett", method = RequestMethod.POST)
-    public String oppdaterBillettIDBPost(@RequestBody Kinobillett billett){
-        rep.oppdaterBillett(billett);
-        return "oppdatert";
-    } */
 
- //   @PostMapping("/hentBillettFraDB")
-    @RequestMapping(value ="/hentBillettFraDB", method = RequestMethod.POST)
+    @PostMapping("/hentBillettFraDB")
     public Kinobillett hentBillettFraDB(@RequestParam Long id){
         return rep.hentEtterID(id);
     }
