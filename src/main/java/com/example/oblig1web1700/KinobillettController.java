@@ -49,7 +49,8 @@ public class KinobillettController {
         return "oppdatert";
     }
 
-    @PostMapping("/hentBillettFraDB")
+ //   @PostMapping("/hentBillettFraDB")
+    @RequestMapping(value ="/hentBillettFraDB", method = RequestMethod.POST)
     public Kinobillett hentBillettFraDB(@RequestParam Long id){
         return rep.hentEtterID(id);
     }

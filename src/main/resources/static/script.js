@@ -183,7 +183,7 @@ function slettBillett(id){
 
 function oppdaterBillett(id){
     document.getElementById("idBillett").innerHTML = id;
-    $.post("http://localhost:8080/hentBillettFraDB?id=   "+id, function (data){
+    $.post("http://localhost:8080/hentBillettFraDB?id="+id, function (data){
         document.getElementById("filmEndring").value = data.film;
         document.getElementById("antallEndring").value = data.antall;
         document.getElementById("fornavnEndring").value = data.fornavn;
@@ -206,7 +206,16 @@ function oppdaterBillettIDB(){
     }
     console.log(document.getElementById("idBillett").value);
     console.log(kinobillett)
-    $.post("http://localhost:8080/oppdaterBillett", kinobillett, function (data){})
+ //   $.post("http://localhost:8080/oppdaterBillett", kinobillett, function (data){})
+    $.ajax({
+        url: "http://localhost:8080/oppdaterBillett",
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(kinobillett),
+        success: function (data){
+            console.log("oppdaterBillettIDB")
+        }
+    })
 }
 
 
