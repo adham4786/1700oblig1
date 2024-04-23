@@ -52,7 +52,7 @@ public class KinobillettRepository {
     }
 
     public int oppdaterBillett(Kinobillett billett) {
-        String sql = "UPDATE billett SET film =?, antall =?, fornavn =?, etternavn =?, telefon =?, epost =? where id= ?";
+        String sql = "UPDATE Kinobillett SET film =?, antall =?, fornavn =?, etternavn =?, telefon =?, epost =? where id= ?";
         return db.update(sql, billett.getFilm(),billett.getAntall(), billett.getFornavn(), billett.getEtternavn()
         , billett.getTelefon(), billett.getEpost(), billett.getId());
     }

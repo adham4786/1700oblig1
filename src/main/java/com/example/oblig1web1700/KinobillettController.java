@@ -36,18 +36,18 @@ public class KinobillettController {
         return "slettet";
     }
 
-    /*
+
     @PostMapping("/oppdaterBillett")
-    public String oppdaterBillett(Kinobillett billett){
+    public String oppdaterBillettIDBPost(Kinobillett billett){
         rep.oppdaterBillett(billett);
         return "oppdatert";
-    } */
-
+    }
+/*
     @RequestMapping(value = "/oppdaterBillett", method = RequestMethod.POST)
     public String oppdaterBillettIDBPost(@RequestBody Kinobillett billett){
         rep.oppdaterBillett(billett);
         return "oppdatert";
-    }
+    } */
 
  //   @PostMapping("/hentBillettFraDB")
     @RequestMapping(value ="/hentBillettFraDB", method = RequestMethod.POST)

@@ -207,7 +207,7 @@ function oppdaterBillettIDB(){
     console.log(document.getElementById("idBillett").value);
     console.log(billett)
     $.post("http://localhost:8080/oppdaterBillett", billett, function (data){})
-/*    $.ajax({
+ /*   $.ajax({
         url: "http://localhost:8080/oppdaterBillett",
         type: "POST",
         contentType: "application/json",
