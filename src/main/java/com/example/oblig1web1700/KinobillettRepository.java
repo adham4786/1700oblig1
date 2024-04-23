@@ -57,6 +57,11 @@ public class KinobillettRepository {
         , billett.getTelefon(), billett.getEpost(), billett.getId());
     }
 
+    public Kinobillett hentEtterID(long id){
+        return db.queryForObject("SELECT * FROM Kinobillett WHERE id = ?",
+                new KinobillettRowMapper(), id);
+    }
+
     public int slettBillett(Long id){
         String sql = "DELETE FROM Kinobillett WHERE id = ?";
         return db.update(sql, new Object[]{
