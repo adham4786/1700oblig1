@@ -183,7 +183,7 @@ function slettBillett(id){
 
 function oppdaterBillett(id){
     document.getElementById("idBillett").innerHTML = id;
-    $.get("http://localhost:8080/hentBillettFraDB?id"+id, function (data){
+    $.post("http://localhost:8080/hentBillettFraDB?id=   "+id, function (data){
         document.getElementById("filmEndring").value = data.film;
         document.getElementById("antallEndring").value = data.antall;
         document.getElementById("fornavnEndring").value = data.fornavn;

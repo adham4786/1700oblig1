@@ -49,7 +49,7 @@ public class KinobillettController {
         return "oppdatert";
     }
 
-    @GetMapping("/hentBillettFraDB")
+    @PostMapping("/hentBillettFraDB")
     public Kinobillett hentBillettFraDB(@RequestParam Long id){
         return rep.hentEtterID(id);
     }
