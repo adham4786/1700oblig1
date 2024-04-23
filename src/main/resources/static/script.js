@@ -195,7 +195,7 @@ function oppdaterBillett(id){
 }
 
 function oppdaterBillettIDB(){
-    kinobillett = {
+    billett = {
         "id": document.getElementById("idBillett").innerHTML,
         "film": document.getElementById("filmEndring").value,
         "antall": document.getElementById("antallEndring").value,
@@ -205,9 +205,9 @@ function oppdaterBillettIDB(){
         "epost": document.getElementById("epostEndring").value,
     }
     console.log(document.getElementById("idBillett").value);
-    console.log(kinobillett)
- //   $.post("http://localhost:8080/oppdaterBillett", kinobillett, function (data){})
-    $.ajax({
+    console.log(billett)
+    $.post("http://localhost:8080/oppdaterBillett", billett, function (data){})
+/*    $.ajax({
         url: "http://localhost:8080/oppdaterBillett",
         type: "POST",
         contentType: "application/json",
@@ -215,7 +215,7 @@ function oppdaterBillettIDB(){
         success: function (data){
             console.log("oppdaterBillettIDB")
         }
-    })
+    }) */
 }
 
 

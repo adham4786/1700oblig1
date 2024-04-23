@@ -44,7 +44,7 @@ public class KinobillettController {
     } */
 
     @RequestMapping(value = "/oppdaterBillett", method = RequestMethod.POST)
-    public String oppdaterBillett(@RequestBody Kinobillett billett){
+    public String oppdaterBillettIDBPost(@RequestBody Kinobillett billett){
         rep.oppdaterBillett(billett);
         return "oppdatert";
     }
