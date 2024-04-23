@@ -27,8 +27,14 @@ public class KinobillettController {
         return rep.hentBilletter();
     }
 
-    @DeleteMapping("/slett")
-    public void slettBilletter(){rep.slettBilletter();}
+    @DeleteMapping("/slettAlle")
+    public void slettAlleBilletter(){rep.slettAlleBilletter();}
+
+    @DeleteMapping("/slettBillett")
+    public String slettBillett(@RequestParam Long id){
+        rep.slettBillett(id);
+        return "slettet";
+    }
 
     @PostMapping("/oppdaterBillett")
     public String oppdaterBillett(Kinobillett billett){

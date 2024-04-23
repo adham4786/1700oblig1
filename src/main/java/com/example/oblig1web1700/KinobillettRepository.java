@@ -14,7 +14,7 @@ import java.util.List;
 public class KinobillettRepository {
 
     @Autowired
-    private JdbcTemplate db;
+    JdbcTemplate db;
 
     class KinobillettRowMapper implements RowMapper< Kinobillett > {
         @Override
@@ -46,8 +46,8 @@ public class KinobillettRepository {
         return db.query("SELECT * FROM Kinobillett", new KinobillettRowMapper());
     }
 
-    public void slettBilletter(){
-        String sql = "DELETE * FROM Kinobillett";
+    public void slettAlleBilletter(){
+        String sql = "DELETE FROM Kinobillett";
         db.update(sql);
     }
 
@@ -55,6 +55,13 @@ public class KinobillettRepository {
         String sql = "UPDATE billett SET film =?, antall =?, fornavn =?, etternavn =?, telefon =?, epost =? where id= ?";
         return db.update(sql, billett.getFilm(),billett.getAntall(), billett.getFornavn(), billett.getEtternavn()
         , billett.getTelefon(), billett.getEpost(), billett.getId());
+    }
+
+    public int slettBillett(Long id){
+        String sql = "DELETE FROM Kinobillett WHERE id = ?";
+        return db.update(sql, new Object[]{
+                id
+        });
     }
 
 }
