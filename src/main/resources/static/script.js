@@ -85,7 +85,25 @@ function nyBillett(){
             etternavn:etternavn, telefon:telefon, epost:epost
         })
         console.log(billettArray);
-        populateHTML(billettArray);
+//        populateHTML(billettArray);
+
+        kinobillett = {
+            "film": document.getElementById("film").value,
+            "antall": document.getElementById("antall").value,
+            "fornavn": document.getElementById("fornavn").value,
+            "etternavn": document.getElementById("etternavn").value,
+            "telefon": document.getElementById("telefon").value,
+            "epost": document.getElementById("epost").value
+        }
+        console.log(kinobillett)
+        // I was getting error messages when using $.post, so I've used $.ajax instead
+        /* $.post("http://localhost:8080/lagre",kinobillett, function (data){}) */
+        $.ajax({
+            url: "http://localhost:8080/lagre",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(kinobillett),
+        })
 
         document.getElementById("film").value = "";
         document.getElementById("antall").value = "";
@@ -93,11 +111,12 @@ function nyBillett(){
         document.getElementById("etternavn").value = "";
         document.getElementById("telefon").value = "";
         document.getElementById("epost").value = "";
+
     }
 }
-
+/*
 function populateHTML(innArray){
-    console.log("So far so good")
+    console.log("Populating HTML")
     let html = "<ol>";
     console.log(innArray)
     for(let i in innArray){
@@ -114,8 +133,8 @@ function populateHTML(innArray){
 function slettBilletter (){
     billettArray.length = 0
     document.getElementById("billett").innerHTML = "";
-}
-
+} */
+/*
 function lagreBillettFraInput(){
     kinobillett = {
         "film": document.getElementById("film").value,
@@ -125,17 +144,17 @@ function lagreBillettFraInput(){
         "telefon": document.getElementById("telefon").value,
         "epost": document.getElementById("epost").value
     }
-    console.log(kinobillett)
+    console.log(kinobillett) */
     // I was getting error messages when using $.post, so I've used $.ajax instead
     /* $.post("http://localhost:8080/lagre",kinobillett, function (data){}) */
-    $.ajax({
+/*    $.ajax({
         url: "http://localhost:8080/lagre",
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify(kinobillett),
         })
     nyBillett();
-}
+} */
 
 function hentAlleBilletterFraDB (){
     $.get("http://localhost:8080/hent", function (data) {
@@ -164,6 +183,16 @@ function slettBillett(id){
     })
 }
 
+function slettAlleBilletter(){
+    $.ajax({
+        url: 'http://localhost:8080/slettAlle',
+        type: 'DELETE',
+        success: function(result){
+            console.log("slettAlle")
+        }
+    })
+}
+
 function oppdaterBillett(id){
     document.getElementById("idBillett").innerHTML = id;
     $.post("http://localhost:8080/hentBillettFraDB?id="+id, function (data){
@@ -178,7 +207,7 @@ function oppdaterBillett(id){
 }
 
 function oppdaterBillettIDB(){
-    billett = {
+    kinobillett = {
         "id": document.getElementById("idBillett").innerHTML,
         "film": document.getElementById("filmEndring").value,
         "antall": document.getElementById("antallEndring").value,
@@ -188,8 +217,8 @@ function oppdaterBillettIDB(){
         "epost": document.getElementById("epostEndring").value,
     }
     console.log(document.getElementById("idBillett").value);
-    console.log(billett)
-    $.post("http://localhost:8080/oppdaterBillett", billett, function (data){})
+    console.log(kinobillett)
+    $.post("http://localhost:8080/oppdaterBillett", kinobillett, function (data){})
  /*   $.ajax({
         url: "http://localhost:8080/oppdaterBillett",
         type: "POST",
