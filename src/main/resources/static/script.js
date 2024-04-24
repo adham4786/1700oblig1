@@ -165,11 +165,11 @@ function hentAlleBilletterFraDB (){
         console.log(data);
         let dynamicHTML = "<ul>";
         data.forEach(function (kinobillett){
-            dynamicHTML += "<li>" + kinobillett.film +" "+ kinobillett.antall+" "
-            + kinobillett.fornavn +" "+ kinobillett.etternavn +" "
-            + kinobillett.telefon +" "+ kinobillett.epost +
-                "<button onclick='oppdaterBillett(" + kinobillett.id +")'>Endre</button>"+
-                "<button onclick='slettBillett(" + kinobillett.id +")'>Slett</button>"+ "</li>"
+            dynamicHTML += "<li>" + kinobillett.film +" | "+ kinobillett.antall+" | "
+            + kinobillett.fornavn +" | "+ kinobillett.etternavn +" | "
+            + kinobillett.telefon +" | "+ kinobillett.epost +" | "+
+                "<button style='background-color: greenyellow' onclick='oppdaterBillett(" + kinobillett.id +")'>Endre</button>"+" "+
+                "<button style='background-color: orangered' onclick='slettBillett(" + kinobillett.id +")'>Slett</button>"+ "</li>"
         })
         dynamicHTML += "</ul>"
         document.getElementById("billetter").innerHTML = dynamicHTML;

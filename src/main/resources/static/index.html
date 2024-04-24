@@ -10,7 +10,7 @@
 <h1>
     Bestilling av kinobilletter
 </h1>
-<!-- onchange="velgFilm();" -->
+<div style="border: solid 2px; width:300px; text-align: center">
 <label for="film">Velg film:</label>
 <select id="film">
     <option>Dune: Part Two</option>
@@ -20,7 +20,6 @@
 <p style="display:none; color:red; font-weight: bold;" id="filmFeilmelding"></p>
 <br>
 <!-- Added labels for screen readers -->
-<!-- form method="post" -->
 <form id ="billettSkjema">
     <label for="antall">Antall:</label>
     <input type="number" id="antall">
@@ -44,7 +43,7 @@
     <br>
     <button type="button" onclick="nyBillett()">Kjøp billett</button>
 </form>
-
+</div>
 
 
 <br>
@@ -56,7 +55,7 @@
 <button onclick="hentAlleBilletterFraDB()">Vis billetter</button>
 <h3>Billetter:</h3>
 <p id="billetter"></p>
-<div>
+<div style="border: solid 2px; width:300px; text-align: center">
     <h2> Oppdater valgt billett </h2>
     <p>ID:</p><p id="idBillett"></p>
     <label>Film</label>
