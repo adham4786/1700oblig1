@@ -15,6 +15,7 @@ public class KinobillettRepository {
     @Autowired
     JdbcTemplate db;
 
+    // Custom RowMapper instead of using BeanPropertyRowMapper
     class KinobillettRowMapper implements RowMapper< Kinobillett > {
         @Override
         public Kinobillett mapRow(ResultSet rs, int rowNum) throws SQLException {

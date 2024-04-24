@@ -9,7 +9,7 @@ public class Kinobillett {
     private String epost;
     private Long id;
 
-    // Konstruktør
+    // Constructors
     public Kinobillett(String film,int antall,String fornavn,String etternavn,String telefon,String epost) {
         this.film = film;
         this.antall = antall;
@@ -31,7 +31,7 @@ public class Kinobillett {
     public Kinobillett(){
     }
 
-    // Getters og setters
+    // Getters and setters
     public String getFilm() {
         return film;
     }
@@ -86,8 +86,8 @@ public class Kinobillett {
     public void setId(Long id) {
         this.id = id;
     }
-    // toString-metode for enkel utskrift
 
+    // toString-method
     @Override
     public String toString() {
         return "Kinobillett{" +

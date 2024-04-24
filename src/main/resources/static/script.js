@@ -114,7 +114,7 @@ function nyBillett(){
 
     }
 }
-/*
+/* This code is unneccesary for oblig 3
 function populateHTML(innArray){
     console.log("Populating HTML")
     let html = "<ol>";
@@ -133,8 +133,9 @@ function populateHTML(innArray){
 function slettBilletter (){
     billettArray.length = 0
     document.getElementById("billett").innerHTML = "";
-} */
-/*
+}
+
+This code is now merged into nyBillett()
 function lagreBillettFraInput(){
     kinobillett = {
         "film": document.getElementById("film").value,
@@ -156,6 +157,7 @@ function lagreBillettFraInput(){
     nyBillett();
 } */
 
+// Shows all tickets currently in database (ordered by last name from KinobillettRepository)
 function hentAlleBilletterFraDB (){
     $.get("http://localhost:8080/hent", function (data) {
         console.log(data);
@@ -172,7 +174,7 @@ function hentAlleBilletterFraDB (){
     })
 }
 
-
+// For deleting specific ticket
 function slettBillett(id){
     $.ajax({
         url: 'http://localhost:8080/slettBillett?id='+id,
@@ -183,6 +185,7 @@ function slettBillett(id){
     })
 }
 
+// For deleting all tickets
 function slettAlleBilletter(){
     $.ajax({
         url: 'http://localhost:8080/slettAlle',
@@ -192,7 +195,7 @@ function slettAlleBilletter(){
         }
     })
 }
-
+// For choosing a ticket to update
 function oppdaterBillett(id){
     document.getElementById("idBillett").innerHTML = id;
     $.post("http://localhost:8080/hentBillettFraDB?id="+id, function (data){
@@ -206,6 +209,7 @@ function oppdaterBillett(id){
     console.log(id);
 }
 
+// For updating chosen ticket
 function oppdaterBillettIDB(){
     kinobillett = {
         "id": document.getElementById("idBillett").innerHTML,

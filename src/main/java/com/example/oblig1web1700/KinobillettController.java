@@ -55,33 +55,3 @@ public class KinobillettController {
 
 
 }
-
-
-
-    /*
-    import java.util.ArrayList;
-    import java.util.List;
-
-
-   public final List<Kinobillett> billettRegistering = new ArrayList<>();
-
-    // Endepunkt for å registrere en ny kinobillettbestilling
-    @PostMapping("/registrerBestillinger")
-    public void bestillBillett(@RequestBody Kinobillett billett) {
-        billettRegistering.add(billett);
-    }
-
-    // Endepunkt for å hente alle kinobillettbestillinger
-    @GetMapping("/hentBestillinger")
-    public List<Kinobillett> hentAlleBestillinger() {
-        return billettRegistering;
-    }
-
-    // Endepunkt for å slette alle kinobillettbestillinger
-    @DeleteMapping("/slettBestillinger")
-    public void slettAlleBestillinger() {
-        billettRegistering.clear();
-    }
-
-
-     */
