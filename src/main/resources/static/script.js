@@ -1,4 +1,4 @@
-billettArray= [];
+//billettArray= [];
 let kinobillett = null;
 function nyBillett(){
     let film = document.getElementById("film").value;
@@ -80,13 +80,15 @@ function nyBillett(){
 
     if (film !== "" && validertAntall && validertFornavn && validertEtternavn
         && validertEpost && validertTelefon) {
-        billettArray.push({
+/*        This part is not neccessary for saving in database, only Java array
+            billettArray.push({
             film:film, antall:antall, fornavn:fornavn,
             etternavn:etternavn, telefon:telefon, epost:epost
         })
-        console.log(billettArray);
+        console.log(billettArray); */
 //        populateHTML(billettArray);
 
+        // This part is what saves the ticket to database
         kinobillett = {
             "film": document.getElementById("film").value,
             "antall": document.getElementById("antall").value,
