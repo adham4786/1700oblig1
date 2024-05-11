@@ -51,7 +51,4 @@ public class KinobillettController {
     public static void main(String[] args) {
         SpringApplication.run(KinobillettController.class, args);
     }
-
-
-
 }
